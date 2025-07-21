@@ -23,8 +23,8 @@ export const PlataformaDesktop = () => {
   const [isSuccess, setIsSuccess] = useState(false);
   const { toast } = useToast();
   
-  // Verificar se é usuário premium (simulando - na implementação real, você pegaria do Supabase/localStorage)
-  const isPremiumUser = false; // TODO: Implementar verificação real do status premium
+  // Liberado para todos os usuários
+  const isPremiumUser = true;
   
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
