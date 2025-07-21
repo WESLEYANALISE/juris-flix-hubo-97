@@ -1,4 +1,3 @@
-
 import { 
   Scale, Bot, Library, Headphones, Brain, Monitor, 
   ChevronLeft, ChevronRight, Home, Star, Play, FileText, Newspaper, Download 
@@ -157,13 +156,13 @@ export const DesktopSidebar = ({ collapsed, onToggle }: DesktopSidebarProps) => 
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
                 <img 
-                  src="https://imgur.com/rrouo0U.png" 
-                  alt="Direito" 
+                  src="https://imgur.com/zlvHIAs.png" 
+                  alt="Direito Premium" 
                   className="w-full h-full object-contain"
                 />
               </div>
               <div>
-                <h2 className="text-lg font-bold text-primary">Direito</h2>
+                <h2 className="text-lg font-bold text-primary">Direito Premium</h2>
                 <p className="text-xs text-muted-foreground">Plataforma Jurídica</p>
               </div>
             </div>

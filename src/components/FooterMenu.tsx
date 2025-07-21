@@ -1,5 +1,4 @@
-
-import { ShoppingCart, Bot, Library, Headphones, Home, FileText, Crown, Brain } from 'lucide-react';
+import { ShoppingCart, Bot, Library, Headphones, Home, FileText, Brain } from 'lucide-react';
 import { useState } from 'react';
 import { useNavigation } from '@/context/NavigationContext';
 import { useAppFunctions } from '@/hooks/useAppFunctions';
@@ -58,11 +57,11 @@ export const FooterMenu = ({ isVisible = true }: FooterMenuProps) => {
       color: 'warning'
     },
     {
-      id: 'premium',
-      title: 'Premium',
-      icon: Crown,
-      function: 'Premium',
-      color: 'premium'
+      id: 'mapas',
+      title: 'Mapas',
+      icon: Brain,
+      function: 'Mapas Mentais',
+      color: 'info'
     }
   ];
 
@@ -75,8 +74,6 @@ export const FooterMenu = ({ isVisible = true }: FooterMenuProps) => {
           return `${baseStyles} text-white bg-gradient-to-br from-store-primary to-store-secondary shadow-lg scale-105 animate-store-glow`;
         case 'community':
           return `${baseStyles} text-white bg-gradient-to-br from-community-primary to-community-secondary shadow-lg scale-105 animate-community-glow`;
-        case 'premium':
-          return `${baseStyles} text-white bg-gradient-to-br from-premium-primary to-premium-secondary shadow-lg scale-105 animate-premium-glow`;
         case 'info':
           return `${baseStyles} text-white bg-gradient-to-br from-info to-blue-600 shadow-lg scale-105`;
         case 'warning':

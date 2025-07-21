@@ -104,8 +104,8 @@ export const MobileSidebar = ({ isOpen, onClose }: MobileSidebarProps) => {
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg animate-legal-shimmer overflow-hidden">
               <img 
-                src="https://imgur.com/rrouo0U.png" 
-                alt="Direito" 
+                src="https://imgur.com/zlvHIAs.png" 
+                alt="Direito Premium" 
                 className="w-full h-full object-contain"
               />
             </div>

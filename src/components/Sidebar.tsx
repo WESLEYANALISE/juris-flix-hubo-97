@@ -1,4 +1,3 @@
-
 import { X, Scale, Book, Bot, Library, GraduationCap, Video, Brain, FileText, Globe, Award, Users, Clock, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -46,13 +45,13 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
             <div className="flex items-center gap-2 sm:gap-3">
               <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg overflow-hidden">
                 <img 
-                  src="https://imgur.com/rrouo0U.png" 
-                  alt="Direito" 
+                  src="https://imgur.com/zlvHIAs.png" 
+                  alt="Direito Premium" 
                   className="w-full h-full object-contain"
                 />
               </div>
               <div>
-                <h2 className="text-lg sm:text-xl font-bold gradient-text">Direito</h2>
+                <h2 className="text-lg sm:text-xl font-bold gradient-text">Direito Premium</h2>
                 <p className="text-sm text-muted-foreground">Plataforma Jurídica</p>
               </div>
             </div>
