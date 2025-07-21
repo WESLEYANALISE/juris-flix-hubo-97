@@ -43,7 +43,6 @@ export const AppFunction = () => {
   if (!currentFunction || loading) {
     return (
       <>
-        <RatingCard />
         {null}
       </>
     );
@@ -107,7 +106,6 @@ export const AppFunction = () => {
     if (currentFunction === 'Loja') {
       return (
         <>
-          <RatingCard />
           {specificComponent}
         </>
       );
@@ -115,7 +113,6 @@ export const AppFunction = () => {
     
     return (
       <>
-        <RatingCard />
         <div className="min-h-screen bg-background">
           {/* Header with back button */}
           <header className="fixed top-0 left-0 right-0 z-40 glass-effect border-b border-border/30">
@@ -158,7 +155,6 @@ export const AppFunction = () => {
     
     return (
       <>
-        <RatingCard />
         <div className="min-h-screen bg-background">
           {/* Header with back button */}
           <header className="fixed top-0 left-0 right-0 z-40 glass-effect border-b border-border/30">
@@ -205,7 +201,6 @@ export const AppFunction = () => {
     
     return (
       <>
-        <RatingCard />
         <div className="min-h-screen bg-background">
           {/* Header with back button */}
           <header className="fixed top-0 left-0 right-0 z-40 glass-effect border-b border-border/30">
@@ -251,7 +246,6 @@ export const AppFunction = () => {
   // Para funções que não têm componente específico nem link válido
   return (
     <>
-      <RatingCard />
       <div className="min-h-screen bg-background">
         {/* Header with back button */}
         <header className="fixed top-0 left-0 right-0 z-40 glass-effect border-b border-border/30">

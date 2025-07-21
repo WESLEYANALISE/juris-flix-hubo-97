@@ -284,18 +284,18 @@ export const PlataformaDesktop = () => {
 
               <Button
                 type="submit"
-                className="w-full h-16 text-lg font-bold bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-600 hover:to-yellow-700 text-white transition-all duration-500 transform hover:scale-105 shadow-xl hover:shadow-2xl border-0"
+                className="w-full h-20 text-xl font-bold bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white transition-all duration-500 transform hover:scale-105 shadow-2xl hover:shadow-green-500/25 border-0 rounded-xl"
                 disabled={isLoading}
               >
                 {isLoading ? (
                   <>
-                    <Loader2 className="w-6 h-6 mr-3 animate-spin" />
+                    <Loader2 className="w-7 h-7 mr-3 animate-spin" />
                     Enviando para seu email...
                   </>
                 ) : (
                   <>
-                    <Crown className="w-6 h-6 mr-3" />
-                    Receber Link Premium por Email
+                    <Download className="w-7 h-7 mr-3" />
+                    Receber o Link
                   </>
                 )}
               </Button>
