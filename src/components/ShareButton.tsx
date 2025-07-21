@@ -1,17 +1,17 @@
-
 import { Share2, Copy, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
-
 interface ShareButtonProps {
   variant?: 'default' | 'ghost' | 'outline';
   size?: 'default' | 'sm' | 'lg' | 'icon';
   className?: string;
 }
-
-export const ShareButton = ({ variant = 'ghost', size = 'icon', className = '' }: ShareButtonProps) => {
+export const ShareButton = ({
+  variant = 'ghost',
+  size = 'icon',
+  className = ''
+}: ShareButtonProps) => {
   const [copied, setCopied] = useState(false);
-
   const handleShare = async () => {
     const url = window.location.href;
     const title = 'Direito Premium - Plataforma Jurídica';
@@ -23,7 +23,7 @@ export const ShareButton = ({ variant = 'ghost', size = 'icon', className = '' }
         await navigator.share({
           title,
           text,
-          url,
+          url
         });
         return;
       } catch (error) {
@@ -41,20 +41,5 @@ export const ShareButton = ({ variant = 'ghost', size = 'icon', className = '' }
       window.open(`https://wa.me/?text=${encodeURIComponent(`${text} ${url}`)}`, '_blank');
     }
   };
-
-  return (
-    <Button 
-      variant={variant} 
-      size={size} 
-      onClick={handleShare}
-      className={`transition-all duration-300 hover:scale-105 ${className}`}
-      title={copied ? 'Link copiado!' : 'Compartilhar'}
-    >
-      {copied ? (
-        <Copy className="h-5 w-5 text-green-400" />
-      ) : (
-        <Share2 className="h-5 w-5 text-primary" />
-      )}
-    </Button>
-  );
+  return;
 };
