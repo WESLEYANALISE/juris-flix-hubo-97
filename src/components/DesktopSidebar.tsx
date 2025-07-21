@@ -57,7 +57,6 @@ export const DesktopSidebar = ({ collapsed, onToggle }: DesktopSidebarProps) => 
       title: 'Principal',
       items: [
         { icon: Home, title: 'Dashboard', function: 'Dashboard' },
-        { icon: Star, title: 'Favoritos', function: 'Favoritos' },
       ]
     },
     {
