@@ -10,22 +10,20 @@ import { useToast } from '@/hooks/use-toast';
 import { Loader2, User, Mail, CheckCircle, Crown, Download, Zap, Shield, Lock, Star } from 'lucide-react';
 import { DesktopPlatformCarousel } from '@/components/DesktopPlatformCarousel';
 import { PremiumRequired } from '@/components/PremiumRequired';
-
 const formSchema = z.object({
   nome: z.string().min(2, 'Nome deve ter pelo menos 2 caracteres'),
   email: z.string().email('Digite um email válido')
 });
-
 type FormData = z.infer<typeof formSchema>;
-
 export const PlataformaDesktop = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-  const { toast } = useToast();
-  
+  const {
+    toast
+  } = useToast();
+
   // Liberado para todos os usuários
   const isPremiumUser = true;
-  
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -33,20 +31,16 @@ export const PlataformaDesktop = () => {
       email: ''
     }
   });
-
   const onSubmit = async (data: FormData) => {
     setIsLoading(true);
     const scriptURL = 'https://sheetdb.io/api/v1/29eaz3rsm73qu';
-
     try {
       console.log('Dados originais do formulário:', data);
-
       const sheetData = {
         Nome: data.nome,
         email: data.email
       };
       console.log('Dados formatados para SheetDB:', sheetData);
-
       const response = await fetch(scriptURL, {
         method: 'POST',
         body: JSON.stringify([sheetData]),
@@ -54,9 +48,7 @@ export const PlataformaDesktop = () => {
           'Content-Type': 'application/json'
         }
       });
-
       console.log('Resposta da API:', response.status, response.statusText);
-
       if (response.ok) {
         const result = await response.json();
         console.log('Dados enviados com sucesso:', result);
@@ -82,10 +74,8 @@ export const PlataformaDesktop = () => {
       setIsLoading(false);
     }
   };
-
   if (isSuccess) {
-    return (
-      <div className="max-w-4xl mx-auto p-4 sm:p-6 md:p-8">
+    return <div className="max-w-4xl mx-auto p-4 sm:p-6 md:p-8">
         <Card className="text-center border-0 bg-card/50 backdrop-blur-sm shadow-2xl">
           <CardHeader className="pb-4">
             <div className="mx-auto w-20 h-20 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mb-6 animate-scale-in">
@@ -124,14 +114,12 @@ export const PlataformaDesktop = () => {
             </div>
           </CardContent>
         </Card>
-      </div>
-    );
+      </div>;
   }
 
   // Se não for usuário premium, mostrar tela de upgrade
   if (!isPremiumUser) {
-    return (
-      <div className="max-w-6xl mx-auto p-4 sm:p-6 md:p-8 py-[21px]">
+    return <div className="max-w-6xl mx-auto p-4 sm:p-6 md:p-8 py-[21px]">
         {/* Carrossel de imagens da plataforma */}
         <div className="mb-12">
           <DesktopPlatformCarousel />
@@ -155,12 +143,9 @@ export const PlataformaDesktop = () => {
 
         {/* PremiumRequired Component */}
         <PremiumRequired functionName="Plataforma Desktop" />
-      </div>
-    );
+      </div>;
   }
-  
-  return (
-    <div className="max-w-6xl mx-auto p-4 sm:p-6 md:p-8 py-[21px]">
+  return <div className="max-w-6xl mx-auto p-4 sm:p-6 md:p-8 py-[21px]">
       {/* Carrossel de imagens da plataforma */}
       <div className="mb-12">
         <DesktopPlatformCarousel />
@@ -176,23 +161,9 @@ export const PlataformaDesktop = () => {
 
       {/* Seção de benefícios */}
       <div className="grid md:grid-cols-3 gap-6 mb-12">
-        <div className="text-center p-6 bg-gradient-to-br from-amber-500/10 to-yellow-500/10 border-amber-200 dark:border-amber-800 backdrop-blur-sm rounded-2xl border animate-fade-in-up">
-          <div className="w-16 h-16 bg-gradient-to-r from-amber-500 to-yellow-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-            <Crown className="w-8 h-8 text-white" />
-          </div>
-          <h3 className="font-bold text-lg mb-2 text-amber-600 dark:text-amber-400">Acesso Premium</h3>
-          <p className="text-sm text-muted-foreground">Funcionalidade exclusiva para usuários Premium</p>
-        </div>
+        
 
-        <div style={{
-        animationDelay: '0.1s'
-      }} className="text-center p-6 bg-card/30 backdrop-blur-sm rounded-2xl border border-border animate-fade-in-up">
-          <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
-            <Shield className="w-8 h-8 text-white" />
-          </div>
-          <h3 className="font-bold text-lg mb-2 text-blue-400">Sem Anúncios</h3>
-          <p className="text-sm text-muted-foreground">Experiência completa sem interrupções</p>
-        </div>
+        
 
         <div style={{
         animationDelay: '0.2s'
@@ -236,68 +207,41 @@ export const PlataformaDesktop = () => {
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
               <div className="grid sm:grid-cols-2 gap-6">
-                <FormField
-                  control={form.control}
-                  name="nome"
-                  render={({ field }) => (
-                    <FormItem>
+                <FormField control={form.control} name="nome" render={({
+                field
+              }) => <FormItem>
                       <FormLabel className="text-foreground font-semibold flex items-center gap-2 text-base">
                         <User className="w-5 h-5 text-primary" />
                         Nome Completo
                       </FormLabel>
                       <FormControl>
-                        <Input
-                          placeholder="Digite seu nome completo"
-                          {...field}
-                          className="h-14 text-base bg-background/50 backdrop-blur-sm border-border focus:border-primary transition-all duration-300"
-                          disabled={isLoading}
-                        />
+                        <Input placeholder="Digite seu nome completo" {...field} className="h-14 text-base bg-background/50 backdrop-blur-sm border-border focus:border-primary transition-all duration-300" disabled={isLoading} />
                       </FormControl>
                       <FormMessage />
-                    </FormItem>
-                  )}
-                />
+                    </FormItem>} />
 
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
+                <FormField control={form.control} name="email" render={({
+                field
+              }) => <FormItem>
                       <FormLabel className="text-foreground font-semibold flex items-center gap-2 text-base">
                         <Mail className="w-5 h-5 text-primary" />
                         E-mail para receber o link
                       </FormLabel>
                       <FormControl>
-                        <Input
-                          type="email"
-                          placeholder="Digite seu melhor e-mail"
-                          {...field}
-                          className="h-14 text-base bg-background/50 backdrop-blur-sm border-border focus:border-primary transition-all duration-300"
-                          disabled={isLoading}
-                        />
+                        <Input type="email" placeholder="Digite seu melhor e-mail" {...field} className="h-14 text-base bg-background/50 backdrop-blur-sm border-border focus:border-primary transition-all duration-300" disabled={isLoading} />
                       </FormControl>
                       <FormMessage />
-                    </FormItem>
-                  )}
-                />
+                    </FormItem>} />
               </div>
 
-              <Button
-                type="submit"
-                className="w-full h-20 text-xl font-bold bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white transition-all duration-500 transform hover:scale-105 shadow-2xl hover:shadow-green-500/25 border-0 rounded-xl"
-                disabled={isLoading}
-              >
-                {isLoading ? (
-                  <>
+              <Button type="submit" className="w-full h-20 text-xl font-bold bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white transition-all duration-500 transform hover:scale-105 shadow-2xl hover:shadow-green-500/25 border-0 rounded-xl" disabled={isLoading}>
+                {isLoading ? <>
                     <Loader2 className="w-7 h-7 mr-3 animate-spin" />
                     Enviando para seu email...
-                  </>
-                ) : (
-                  <>
+                  </> : <>
                     <Download className="w-7 h-7 mr-3" />
                     Receber o Link
-                  </>
-                )}
+                  </>}
               </Button>
             </form>
           </Form>
@@ -317,6 +261,5 @@ export const PlataformaDesktop = () => {
           </div>
         </CardContent>
       </Card>
-    </div>
-  );
+    </div>;
 };
