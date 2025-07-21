@@ -41,15 +41,5 @@ export const ShareButton = ({
       window.open(`https://wa.me/?text=${encodeURIComponent(`${text} ${url}`)}`, '_blank');
     }
   };
-  return (
-    <Button
-      variant={variant}
-      size={size}
-      className={className}
-      onClick={handleShare}
-      title={copied ? 'Link copiado!' : 'Compartilhar'}
-    >
-      {copied ? <Copy className="h-4 w-4" /> : <Share2 className="h-4 w-4" />}
-    </Button>
-  );
+  return;
 };
