@@ -172,33 +172,11 @@ export const SuporteTab = () => {
   };
   return <div className="max-w-2xl mx-auto p-6 space-y-6">
       <div className="text-center space-y-2">
-        <h2 className="text-2xl font-bold gradient-text-legal">Central de Suporte</h2>
-        <p className="text-muted-foreground">
-          Precisa de ajuda? Nossa equipe está pronta para auxiliá-lo
-        </p>
+        
+        
       </div>
 
-      <div className="grid gap-4 md:grid-cols-3 py-[6px]">
-        <Card className="text-center">
-          <CardContent className="pt-6">
-            <MessageCircle className="h-8 w-8 mx-auto mb-2 text-blue-500" />
-            <h3 className="font-semibold">Chat Online</h3>
-            <p className="text-sm text-muted-foreground">Resposta imediata</p>
-          </CardContent>
-        </Card>
-        
-        <Card className="text-center">
-          <CardContent className="pt-6">
-            <Clock className="h-8 w-8 mx-auto mb-2 text-orange-500" />
-            <h3 className="font-semibold">24-48h</h3>
-            <p className="text-sm text-muted-foreground">Tempo de resposta</p>
-          </CardContent>
-        </Card>
-        
-        <Card className="text-center">
-          
-        </Card>
-      </div>
+      
 
       <Card>
         
