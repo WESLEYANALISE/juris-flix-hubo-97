@@ -2,6 +2,7 @@
 import { FeaturesCarousel } from '@/components/FeaturesCarousel';
 import { FeaturesGrid } from '@/components/FeaturesGrid';
 import { QuickAccessSection } from '@/components/QuickAccessSection';
+import { ProductCarousel } from '@/components/ProductCarousel';
 import { AppFunction } from '@/components/AppFunction';
 import { MobileLayout } from '@/components/MobileLayout';
 import { DesktopLayout } from '@/components/DesktopLayout';
@@ -31,6 +32,21 @@ const Index = () => {
 
       {/* Quick Access Section */}
       <QuickAccessSection />
+
+      {/* Product Carousel Section */}
+      <section className="px-3 sm:px-4 md:px-8 mb-6 sm:mb-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 gradient-text-legal">
+              Obras em Destaque
+            </h2>
+            <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto">
+              Explore nossa seleção de clássicos da literatura jurídica
+            </p>
+          </div>
+          <ProductCarousel />
+        </div>
+      </section>
 
       {/* Features Grid */}
       <FeaturesGrid />

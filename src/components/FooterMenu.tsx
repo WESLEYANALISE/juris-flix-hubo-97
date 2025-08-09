@@ -29,13 +29,6 @@ export const FooterMenu = ({ isVisible = true }: FooterMenuProps) => {
       color: 'primary'
     },
     {
-      id: 'loja',
-      title: 'Loja',
-      icon: ShoppingCart,
-      function: 'Loja',
-      color: 'store'
-    },
-    {
       id: 'audio-aulas',
       title: 'Áudio-aulas',
       icon: Headphones,

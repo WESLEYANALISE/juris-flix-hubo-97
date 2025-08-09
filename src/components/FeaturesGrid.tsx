@@ -112,12 +112,12 @@ export const FeaturesGrid = () => {
       <div className="max-w-7xl mx-auto">
         {/* Botões destacados redesenhados com design profissional */}
         <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mb-16 animate-fade-in">
-          {/* Botão Loja - Design profissional */}
+          {/* Botão Clássicos do Direito - Design profissional */}
           <button onClick={() => setCurrentFunction('Loja')} className="group relative overflow-hidden bg-gradient-to-r from-store-primary to-store-secondary hover:from-store-secondary hover:to-store-primary text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl hover:shadow-store-primary/25 transform hover:scale-[1.02] transition-all duration-500 flex items-center gap-4 min-w-[280px] justify-center border border-store-primary/20">
             <div className="w-8 h-8 rounded-lg bg-white/15 backdrop-blur-sm flex items-center justify-center group-hover:bg-white/25 transition-all duration-300">
-              <ShoppingBag className="w-5 h-5 text-white icon-hover-bounce" />
+              <BookOpen className="w-5 h-5 text-white icon-hover-bounce" />
             </div>
-            <span className="font-medium">Loja de Direito</span>
+            <span className="font-medium">Clássicos do Direito</span>
             <ArrowRight className="w-5 h-5 text-white/80 group-hover:text-white group-hover:translate-x-1 transition-all duration-300" />
           </button>
           

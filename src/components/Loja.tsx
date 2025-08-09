@@ -1,5 +1,5 @@
 
-import { ArrowLeft, ShoppingBag, Copy, Check } from 'lucide-react';
+import { ArrowLeft, BookOpen, Copy, Check, Users, Sparkles, Star } from 'lucide-react';
 import { useNavigation } from '@/context/NavigationContext';
 import { useState } from 'react';
 import { toast } from '@/hooks/use-toast';
@@ -78,15 +78,15 @@ export const Loja = () => {
           {/* Seção Principal com Título e Botão de Destaque */}
           <div className="text-center mb-8">
             <div className="gradient-store w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center animate-store-glow shadow-lg">
-              <ShoppingBag className="h-8 w-8 text-white" />
+              <BookOpen className="h-8 w-8 text-white" />
             </div>
             
             <h1 className="text-3xl font-bold mb-3 gradient-text-legal">
-              Loja de Direito
+              Clássicos do Direito
             </h1>
             
             <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Produtos especializados selecionados para potencializar seus estudos jurídicos
+              Biblioteca curada com obras fundamentais da literatura jurídica brasileira e internacional
             </p>
 
             {/* Botão Principal de Destaque */}
@@ -98,79 +98,92 @@ export const Loja = () => {
               {isLoading ? (
                 <>
                   <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                  Carregando Loja...
+                  Carregando Biblioteca...
                 </>
               ) : (
                 <>
-                  <ShoppingBag className="h-5 w-5" />
-                  Entrar na Loja Agora
+                  <BookOpen className="h-5 w-5" />
+                  Explorar Biblioteca
                 </>
               )}
             </button>
           </div>
 
-          {/* Card de Oferta Especial com Logo do Mercado Livre */}
-          <div className="card-legal rounded-2xl p-6 mb-8 text-center relative overflow-hidden animate-scale-in max-w-md mx-auto">
-            <div className="absolute inset-0 gradient-store opacity-10 animate-legal-shimmer"></div>
-            <div className="relative z-10">
-              <div className="w-16 h-16 rounded-full mx-auto mb-4 overflow-hidden">
-                <img 
-                  src="https://s2.glbimg.com/Bu6upvmSg6SRv0za635uXphThKo=/620x430/e.glbimg.com/og/ed/f/original/2020/03/28/mercado-livre.jpg"
-                  alt="Mercado Livre"
-                  className="w-full h-full object-cover"
-                />
+          {/* Categorias de Livros */}
+          <div className="mb-8">
+            <h3 className="text-2xl font-bold mb-6 text-center gradient-text-store">Categorias em Destaque</h3>
+            <div className="grid md:grid-cols-3 gap-6">
+              {/* Direito Constitucional */}
+              <div className="bg-gradient-to-br from-blue-500 to-indigo-600 p-6 rounded-2xl text-white relative overflow-hidden group hover:scale-105 transition-all duration-300">
+                <div className="absolute top-4 right-4">
+                  <BookOpen className="h-6 w-6 text-white/80" />
+                </div>
+                <h4 className="text-xl font-bold mb-2">Direito Constitucional</h4>
+                <p className="text-white/90 mb-4">Obras fundamentais sobre a Constituição e seus princípios</p>
+                <div className="flex items-center gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-4 w-4 fill-yellow-300 text-yellow-300" />
+                  ))}
+                  <span className="text-sm text-white/80 ml-1">(128 obras)</span>
+                </div>
               </div>
-              
-              <h3 className="text-xl font-bold mb-3 text-store-primary">
-                Oferta Exclusiva
-              </h3>
-              
-              <p className="text-base mb-4">
-                Ganhe <span className="text-store-primary text-xl font-bold">10% de desconto</span> na sua primeira compra!
-              </p>
-              
-              <div 
-                className="bg-green-600 text-white px-4 py-3 rounded-xl inline-flex items-center gap-2 cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-lg active:scale-95 mb-3"
-                onClick={handleCopyCoupon}
-              >
-                <code className="text-lg font-mono font-bold">WN7PR10</code>
-                {copiedCoupon ? (
-                  <Check className="h-5 w-5 animate-scale-in" />
-                ) : (
-                  <Copy className="h-5 w-5" />
-                )}
+
+              {/* Direito Civil */}
+              <div className="bg-gradient-to-br from-green-500 to-emerald-600 p-6 rounded-2xl text-white relative overflow-hidden group hover:scale-105 transition-all duration-300">
+                <div className="absolute top-4 right-4">
+                  <Users className="h-6 w-6 text-white/80" />
+                </div>
+                <h4 className="text-xl font-bold mb-2">Direito Civil</h4>
+                <p className="text-white/90 mb-4">Clássicos do direito das obrigações, contratos e família</p>
+                <div className="flex items-center gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-4 w-4 fill-yellow-300 text-yellow-300" />
+                  ))}
+                  <span className="text-sm text-white/80 ml-1">(95 obras)</span>
+                </div>
               </div>
-              
-              <p className="text-sm text-muted-foreground">
-                Toque no código para copiá-lo
-              </p>
+
+              {/* Filosofia do Direito */}
+              <div className="bg-gradient-to-br from-purple-500 to-pink-600 p-6 rounded-2xl text-white relative overflow-hidden group hover:scale-105 transition-all duration-300">
+                <div className="absolute top-4 right-4">
+                  <Sparkles className="h-6 w-6 text-white/80" />
+                </div>
+                <h4 className="text-xl font-bold mb-2">Filosofia do Direito</h4>
+                <p className="text-white/90 mb-4">Pensadores clássicos e contemporâneos do direito</p>
+                <div className="flex items-center gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-4 w-4 fill-yellow-300 text-yellow-300" />
+                  ))}
+                  <span className="text-sm text-white/80 ml-1">(67 obras)</span>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Grid de Benefícios - Layout mais compacto */}
+          {/* Grid de Benefícios da Biblioteca */}
           <div className="grid grid-cols-1 gap-4 mb-8 max-w-md mx-auto">
             <div className="text-center p-4 rounded-xl bg-card/50 backdrop-blur-sm border animate-fade-in" style={{ animationDelay: '0.1s' }}>
               <div className="w-12 h-12 bg-community-primary/20 rounded-full flex items-center justify-center mx-auto mb-3">
                 <span className="text-2xl">📚</span>
               </div>
-              <h4 className="font-semibold mb-2">Livros Especializados</h4>
-              <p className="text-sm text-muted-foreground">Obras atualizadas dos melhores autores do Direito</p>
+              <h4 className="font-semibold mb-2">Obras Clássicas</h4>
+              <p className="text-sm text-muted-foreground">Livros fundamentais dos maiores juristas da história</p>
             </div>
             
             <div className="text-center p-4 rounded-xl bg-card/50 backdrop-blur-sm border animate-fade-in" style={{ animationDelay: '0.2s' }}>
               <div className="w-12 h-12 bg-premium-primary/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                <span className="text-2xl">📝</span>
+                <span className="text-2xl">🏛️</span>
               </div>
-              <h4 className="font-semibold mb-2">Materiais de Estudo</h4>
-              <p className="text-sm text-muted-foreground">Resumos, mapas mentais e guias práticos</p>
+              <h4 className="font-semibold mb-2">Direito Brasileiro</h4>
+              <p className="text-sm text-muted-foreground">Coleção completa de autores nacionais renomados</p>
             </div>
             
             <div className="text-center p-4 rounded-xl bg-card/50 backdrop-blur-sm border animate-fade-in" style={{ animationDelay: '0.3s' }}>
               <div className="w-12 h-12 bg-store-primary/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                <span className="text-2xl">🖊️</span>
+                <span className="text-2xl">🌍</span>
               </div>
-              <h4 className="font-semibold mb-2">Produtos de Escritório</h4>
-              <p className="text-sm text-muted-foreground">Materiais profissionais para advogados</p>
+              <h4 className="font-semibold mb-2">Direito Internacional</h4>
+              <p className="text-sm text-muted-foreground">Obras internacionais traduzidas e comentadas</p>
             </div>
           </div>
 
@@ -190,30 +203,30 @@ export const Loja = () => {
             </div>
           </div>
 
-          {/* Seção Mercado Livre */}
-          <div className="text-center bg-gradient-to-r from-yellow-500/10 to-blue-500/10 rounded-xl p-6 border">
-            <div className="w-16 h-16 bg-gradient-to-r from-yellow-500 to-blue-500 rounded-full mx-auto mb-4 flex items-center justify-center">
-              <span className="text-2xl">🛒</span>
+          {/* Seção Acesso Gratuito */}
+          <div className="text-center bg-gradient-to-r from-emerald-500/10 to-blue-500/10 rounded-xl p-6 border">
+            <div className="w-16 h-16 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-full mx-auto mb-4 flex items-center justify-center">
+              <BookOpen className="h-8 w-8 text-white" />
             </div>
             <h3 className="text-xl font-bold mb-3 gradient-text-legal">
-              Compras via Mercado Livre
+              Acesso Livre e Gratuito
             </h3>
             <p className="text-muted-foreground mb-4 max-w-2xl mx-auto">
-              Todas as nossas compras são processadas através do <strong>Mercado Livre</strong>, 
-              garantindo total segurança, proteção ao comprador e entrega confiável em todo o Brasil.
+              Nossa biblioteca digital oferece acesso gratuito a uma coleção curada de 
+              <strong> obras clássicas do direito</strong>, disponíveis para consulta e estudo.
             </p>
             <div className="flex flex-wrap justify-center items-center gap-4 text-sm">
               <div className="flex items-center gap-2">
                 <span className="text-green-500">✅</span>
-                <span>Mercado Pago</span>
+                <span>Acesso Gratuito</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-blue-500">🏆</span>
-                <span>Mercado Líder</span>
+                <span className="text-blue-500">📖</span>
+                <span>Biblioteca Digital</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-yellow-500">⭐</span>
-                <span>Avaliações Verificadas</span>
+                <span>Obras Verificadas</span>
               </div>
             </div>
           </div>
